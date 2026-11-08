@@ -1,0 +1,15 @@
+name: Run SSHX in GitHub Actions
+
+on:
+  workflow_dispatch: # Cho phép kích hoạt thủ công trong tab Actions
+
+jobs:
+  sshx:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install and run sshx
+        run: |
+          curl -sSf https://sshx.io/get | sh -s run
